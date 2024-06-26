@@ -8,6 +8,6 @@ using any of these, yeah? :)
 
 ### cloc-wrapper ([AlDanial/cloc](https://github.com/AlDanial/cloc))
 
-Uses sed to reflow the output, moving the author GH link, version string,
+Uses `sed` to reflow the output, moving the author GH link, version string,
 and stats to the first line. I find it much less distracting, for some
 reason.
