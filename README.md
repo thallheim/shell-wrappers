@@ -6,9 +6,9 @@ using any of these, yeah? :)
 
 ## The wrappers
 
-### cloc-wrapper
+### cloc-wrapper ([AlDanial/cloc](https://github.com/AlDanial/cloc))
 
-- [AlDanial/cloc](https://github.com/AlDanial/cloc)
+[AlDanial/cloc](https://github.com/AlDanial/cloc)
 
 Uses sed to reflow the output, moving the author GH link, version string,
 and stats to the first line. I find it much less distracting, for some
