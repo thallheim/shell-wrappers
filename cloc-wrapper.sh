@@ -15,6 +15,13 @@ then
     exit 1
 fi
 
+# Check for lolcat, because why not
+lc=false
+if command -v lolcat &> /dev/null
+then
+    export lc=true
+fi
+
 # Call cloc and stash its output
 cloc_output=$(cloc "$@" 2>&1)
 
@@ -24,8 +31,16 @@ attrib=$(echo "$cloc_output" | grep 'github.com/AlDanial/cloc v')
 # Strip link, version and stats
 cloc_output_stripped=$(echo "$cloc_output" | sed "/github.com\/AlDanial\/cloc v/d")
 
-# Reflow output
+# Reflow output, with pizzazz if lolcat is on $PATH
 echo ""
-echo "$attrib"
-echo "-------------------------------------------------------------------------------"
+
+if [ $lc = true ]
+then
+    echo "$attrib" |lolcat
+    echo "-------------------------------------------------------------------------------" |lolcat
+else
+    echo "$attrib"
+    echo "-------------------------------------------------------------------------------"
+fi
+
 echo "$cloc_output_stripped"
